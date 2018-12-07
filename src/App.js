@@ -33,9 +33,7 @@ class App extends React.Component {
             isLoaded: true,
             items1:json,
           })
-          //console.log(this.state.items.colors[0].hex)
-        //  let randomOne =this.state.items.colors[0].hex;
-      //  console.log(this.state)
+
 
         })
 
@@ -47,28 +45,22 @@ class App extends React.Component {
                 items2:json,
               })
 
-
             })
-
 
   }
 
   getState = (event) => {
     this.setState({value: event.target.value});
-    console.log(this.state.value);
-    //console.log(this.state.items.colors[0].hex)
-    //console.log(this.state.items2.colors[0].hex)
-
+    //console.log(this.state.value);
 
 }
-
 
 
 changeColor = (event) => {
   const randomOne =`#${this.state.items1.colors[0].hex}`;
   const randomTwo =`#${this.state.items2.colors[0].hex}`;
-  console.log(randomOne)
-  console.log(randomTwo)
+  // console.log(randomOne)
+  // console.log(randomTwo)
   this.setState(state => ({
       isToggleOn: !state.isToggleOn
     }));
@@ -88,13 +80,13 @@ changeColor = (event) => {
     return (
 
 
-        <form className="store-selector" >
-        <div style={{backgroundColor:this.state.bColor}} onClick={this.changeColor} props="true"> {this.state.value}</div>
+        <form>
+        <div style={{backgroundColor:this.state.bColor}} onClick={this.changeColor}> {this.state.value}</div>
               <input type="text"
                 ref={this.myInput}
                 onChange={this.getState}
                 value={this.state.value}
-                required
+
                 placeholder="Write something"
                 />
         </form>
