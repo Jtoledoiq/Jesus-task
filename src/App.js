@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './App.css';
 class App extends React.Component {
 
 
@@ -79,10 +79,10 @@ changeColor = (event) => {
 
     return (
 
-
+<div className="container">
         <form>
-        <div style={{backgroundColor:this.state.bColor}} onClick={this.changeColor}> {this.state.value}</div>
-              <input type="text"
+        <div style={{backgroundColor:this.state.bColor}} onClick={this.changeColor}>Here is your result: {this.state.value}</div>
+              Write something: <input type="text"
                 ref={this.myInput}
                 onChange={this.getState}
                 value={this.state.value}
@@ -91,7 +91,7 @@ changeColor = (event) => {
                 />
         </form>
 
-
+</div>
     );
   }
 }
